@@ -134,14 +134,6 @@ class Seeding:
                     merged_tuples.append(seed_tuple)
         return tuples
 
-    def build_custom_mapping(self, start, end, target, destination='seed'):
-        for seed_mapping in self.groups[destination]:
-            if seed_mapping.intersect(start, end):
-                target[destination].append(seed_mapping)
-                if seed_mapping.destinationName:
-                    self.build_custom_mapping(seed_mapping.get_destination_val(seed_mapping.source_start),
-                                              seed_mapping.get_destination_val(seed_mapping.source_end), target,
-                                              seed_mapping.destinationName)
 
     def build_custom_range(self, start, end, target, destination='seed'):
         destination_name = None
