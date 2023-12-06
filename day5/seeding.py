@@ -168,13 +168,6 @@ class Seeding:
                                             destination_name)
             target[destination_name].sort(key=lambda x: x.start)
 
-    def in_range(self, range_value: int, seed_ranges: list[SeedRange]):
-        for seed_range in seed_ranges:
-            if seed_range.in_range(range_value):
-                return True
-
-        return False
-
     def process_ranges(self, seed_ranges: list[SeedRange]):
         results = []
         for seed_range in seed_ranges:
